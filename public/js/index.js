@@ -1,4 +1,7 @@
 let socket=io();
+let msg=document.querySelector('#msg-form input');
+let msgList=document.querySelector('#msgList');
+
 socket.on('connect',function(){
     console.log('connected to server');
 });
@@ -6,16 +9,18 @@ socket.on('disconnect',function(){
     console.log('disconnected from server');
 });
 
+let sendMsg=(e)=>{
+    e.preventDefault();
+    socket.emit('createMessage',{
+        from:'User',
+        text:msg.value
+    },function(){
+    });
+    
+}
 
-socket.emit('createMessage',{
-    from:'papu',
-    text:"hlo12334",
-    createdAt:'1234'
-},function(data){
-    console.log(data);
-});
+document.querySelector("#msg-form").addEventListener('submit',sendMsg);
 
 socket.on('newMessage',function(msg){
-    console.log(msg);
-
+    msgList.innerHTML+=`<li>${msg.from}:${msg.text}</li>`;
 })
