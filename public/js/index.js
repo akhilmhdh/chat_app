@@ -11,6 +11,8 @@ socket.emit('createMessage',{
     from:'papu',
     text:"hlo12334",
     createdAt:'1234'
+},function(data){
+    console.log(data);
 });
 
 socket.on('newMessage',function(msg){
