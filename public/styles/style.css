@@ -1,7 +1,9 @@
 body,html{
     margin:0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
+    max-width: 100%;
+    overflow-y:hidden;
 }
 .center_form{
     display: flex;
@@ -124,4 +126,19 @@ body,html{
 .msg_text{
     position: relative;
     top:-1.5em;
+}
+@media screen and (max-width:600px){
+    .usersList{
+        display: none;
+    }
+    .grid-body{
+        display:grid;
+        width:100%;
+        height:100%;
+        grid-template-rows: 7fr auto;
+        grid-template-columns: 1fr 5fr;
+        grid-template-areas: 
+        "usr usr"
+        "msg msg";
+    }
 }
