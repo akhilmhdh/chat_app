@@ -1,9 +1,17 @@
+const moment=require('moment');
 let genMsg=(from,text)=>{
     return {
         from,
         text,
-        createdAt:new Date().getTime()
-    }
-}
+        createdAt:moment.valueOf()
+    };
+};
+let genLocation=(from,lat,lng)=>{
+    return {
+        from,
+        url:`https://www.google.com/maps?q=${lat},${lng}`,
+        createdAt:moment.valueOf()
+    };
+};
 
-module.exports={genMsg}
+module.exports={genMsg,genLocation};

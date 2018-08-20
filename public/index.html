@@ -1,17 +1,33 @@
 <html>
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content=content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet"  href="./styles/style.css">
     </head>
-    <body>
-        <p>Welcome To The Chat</p>
-
-        <ol id="msgList"></ol>
-
-        <form id="msg-form">
-            <input name="msg-text" type="text" placeholder="messages"/>
-            <button >Send</button>
-        </form>
+    <body class="center_form">
+        <div class="center_form_form">
+            <form action="/chat.html">
+                <div class="form_details">
+                    <h1>Join A Chat</h1>
+                </div>
+                <div class="form_details">
+                    <label>Display Name</label>
+                    <input type="text" name="name" autofocus/>
+                </div>
+                <div class="form_details">
+                    <label>Room Name</label>
+                    <input type="text" name="room" list="browsers" autofocus/>
+                    <datalist id="browsers">
+                    </datalist>
+                </div>
+                <div class="form_details">
+                    <button>Join</button>
+                </div>
+            </form>
+        </div>
+        <script id="msg-template" type="text/template"><option value={{roomName}}></script>
         <script src="/socket.io/socket.io.js"></script>
+        <script src="/js/libs/mustache.js"></script>
         <script src="/js/index.js"></script>
     </body>
 </html>

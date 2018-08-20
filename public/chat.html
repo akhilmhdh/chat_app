@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet"  href="./styles/style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div class="grid-body">
+        <div class="usersList">
+                <h3>Users</h3>
+                <div class="usrlist"></div>
+        </div>
+        <div class="chat">
+            <ol id="msgList"></ol>
+        </div>
+        <div class="messenger">
+            <form id="msg-form">
+                    <input name="msg-text" type="text" placeholder="messages" autofocus autocomplete="off"/>
+                    <button>Send</button>
+                    <button>Send Location</button>
+            </form>
+           
+        </div>
+        </div>
+        <script id="msg-template" type="text/template">
+            <li id="msg">
+            <div class="msg_title"><h4>{{from}}</h4><span>{{time}}</span></div>
+            <div class="msg_text"><p>{{text}}</p></div>
+            </li>
+        </script>
+        <script src="/js/libs/moment.js"></script>
+        <script src="/js/libs/mustache.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="/js/chat.js"></script>
+        <script src="/js/libs/deparam.js"></script>
+    </body>
+</html>

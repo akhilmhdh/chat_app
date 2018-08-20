@@ -1,0 +1,127 @@
+body,html{
+    margin:0;
+    width: 100%;
+    height: 100%;
+}
+.center_form{
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    width:100vw;
+    height: 100vh;
+    background-color: rgb(54, 92, 128);
+}
+.center_form_form {
+    background-color: rgb(221, 217, 217);
+    height: 25vh;
+    width: 50vw;
+    padding: 15px;
+    border-radius: 10px;
+}
+.form_details >*{
+    width:100%;
+    padding: 6px;
+    margin:10px 0 10px 0;
+    font:18px adobe ariel;
+    text-align: center;
+    border-radius: 5px;
+}
+.form_detais label{
+    display:block;
+    margin-bottom:7px;
+}
+.form_details button{
+    border:none;
+    font:20px adobe ariel;
+    background-color: rgb(54, 92, 128);
+    color:rgb(221, 217, 217);
+}
+.form_details button:hover{
+    background-color:  rgb(55, 107, 155);
+}
+.grid-body{
+    display:grid;
+    width:100%;
+    height:100%;
+    grid-template-rows: 7fr auto;
+    grid-template-columns: 1fr 5fr;
+    grid-template-areas: 
+    "list usr"
+    "list msg";
+}
+.usersList{
+    grid-area: list;
+    background-color: #0b8e5e;
+    text-align: right;
+}
+.usersList h3{
+    font:30px "Baskerville";
+    color:white;
+}
+.usrlist li{
+    list-style-type: none;
+    margin:auto;
+    font: 1.1em "baskerville";
+    color:black;
+    margin-left:0;
+    margin-bottom: 1em;
+    border:none;
+    background-color:#2aac60;
+    padding:.5em;
+}
+.chat{
+    grid-area: usr;
+    margin-left:10px;
+    overflow: auto;
+}
+.messenger{
+    grid-area: msg;
+    display: flex;
+    flex-shrink: 0;
+    background-color: #0b8e5e;
+}       
+.messenger form{
+    display: flex;
+    flex-grow: 1;
+
+}
+.messenger input {
+    padding: 10px;
+    flex-grow: 1;
+    border:3px solid #0b8e5e;
+    border-radius: 10px;
+    font:1em adobe ariel;
+}
+.messenger button{
+    border:3px solid #0b8e5e;
+    border-radius: 10px;
+    padding: 10px;
+    font:1em adobe ariel;
+}
+#msgList{
+    list-style-type: none;
+    margin-bottom: 1em;
+}
+#msg{
+    position: relative;
+    top: 0;
+    bottom:0;
+}
+.msg_title{
+    display: flex;
+    margin-bottom: 5px;
+ }
+ 
+.msg_title h4 {
+    margin-top:0px;
+    font:1em lucida bright;
+}
+.msg_title span{
+    font:.75em adobe ariel;
+    margin:4px 0 0 8px;
+    color:grey;
+}
+.msg_text{
+    position: relative;
+    top:-1.5em;
+}
